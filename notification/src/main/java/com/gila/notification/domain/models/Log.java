@@ -1,22 +1,22 @@
 package com.gila.notification.domain.models;
 
 import jakarta.persistence.*;
-import lombok.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
-
-
- @Getter
- @Setter
- @AllArgsConstructor
- @NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "logs")
 public class Log {
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String message;
     private String category;
@@ -27,16 +27,15 @@ public class Log {
     private String channel;
     private Date timestamp;
 
-     public Log( String message, String category,long userId, String userName, String userEmail, String userPhone, String channel,  Date timestamp   ) {
-         this.timestamp = timestamp;
-         this.channel = channel;
-         this.userPhone = userPhone;
-         this.userEmail = userEmail;
-         this.userName = userName;
-         this.userId = userId;
-         this.category = category;
-         this.message = message;
-     }
-
-// Getters and setters
+    public Log(String message, String category, long userId, String userName, String userEmail, String userPhone,
+               String channel, Date timestamp) {
+        this.timestamp = timestamp;
+        this.channel = channel;
+        this.userPhone = userPhone;
+        this.userEmail = userEmail;
+        this.userName = userName;
+        this.userId = userId;
+        this.category = category;
+        this.message = message;
+    }
 }

@@ -2,7 +2,7 @@ package com.gila.notification.infraestructura.data;
 
 
 import com.gila.notification.domain.models.Category;
-import com.gila.notification.domain.models.NotificationType;
+import com.gila.notification.domain.models.Channel;
 import com.gila.notification.domain.models.Notifications;
 import com.gila.notification.domain.models.User;
 
@@ -24,9 +24,9 @@ public class MockUsers {
                 new Category("Movie"));
 
         var notificationsType = Arrays.asList(
-                new NotificationType("Sms"),
-                new NotificationType("Email"),
-                new NotificationType("Push")
+                new Channel("Sms"),
+                new Channel("Email"),
+                new Channel("Push")
 
         );
 

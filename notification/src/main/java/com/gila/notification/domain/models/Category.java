@@ -22,7 +22,6 @@ public class Category {
     @Column(name = "name", nullable = false)
     private String name;
 
-
     @OneToMany(mappedBy = "categoriesName")
     private  List<Notifications> notifications;
 
@@ -30,4 +29,3 @@ public class Category {
         this.name = name;
     }
 }
-

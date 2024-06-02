@@ -8,8 +8,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,27 +22,24 @@ public class Notifications {
      */
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "categories_name", nullable = false)
+    @JoinColumn(name = "category_name", nullable = false,foreignKey = @ForeignKey(name = "fk_category_notification"))
     private Category categoriesName;
 
     /**
      * User ID.
      */
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "users_id", nullable = false)
+    @JoinColumn(name = "users_id", nullable = false,foreignKey = @ForeignKey(name = "fk_user_notification"))
     private  User users;
 
     /**
      * Notification Type.
      */
-
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "notification_type_name", nullable = false)
-    private  NotificationType notificationsType;
+    @JoinColumn(name = "channel_name", nullable = false,foreignKey = @ForeignKey(name = "fk_channel_notification"))
+    private Channel channels;
 
 
 

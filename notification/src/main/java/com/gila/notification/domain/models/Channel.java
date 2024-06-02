@@ -16,18 +16,16 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "notification_type")
-public class NotificationType {
+public class Channel {
     @Id
     @Size(max = 255)
     @Column(name = "name", nullable = false)
     private String name;
 
-
-    @OneToMany(mappedBy = "notificationsType")
+    @OneToMany(mappedBy = "channels")
     private List<Notifications> notifications;
 
-    public NotificationType(String name) {
+    public Channel(String name) {
         this.name = name;
     }
 }
-

@@ -4,9 +4,7 @@ package com.gila.notification.domain.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Getter
@@ -35,8 +33,4 @@ public class User {
         this.email = email;
         this.phone = phone;
     }
-
-    //private String channels;
-
-    // Getters and setters
 }
