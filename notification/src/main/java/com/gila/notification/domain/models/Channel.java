@@ -15,10 +15,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "notification_type")
+@Table(name = "channels")
 public class Channel {
     @Id
-    @Size(max = 255)
+    @Size(max = 50)
     @Column(name = "name", nullable = false)
     private String name;
 

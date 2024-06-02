@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name = "categories")
 public class Category {
     @Id
-    @Size(max = 255)
+    @Size(max = 50)
     @Column(name = "name", nullable = false)
     private String name;
 

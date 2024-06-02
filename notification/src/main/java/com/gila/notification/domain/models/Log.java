@@ -1,6 +1,7 @@
 package com.gila.notification.domain.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,11 +20,14 @@ public class Log {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String message;
+    @Size(max = 50)
     private String category;
     private long userId;
     private String userName;
     private String userEmail;
+    @Size(max = 15)
     private String userPhone;
+    @Size(max = 50)
     private String channel;
     private Date timestamp;
 
