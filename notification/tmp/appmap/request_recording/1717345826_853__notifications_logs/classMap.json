@@ -1,0 +1,96 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "name": "findAll",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/infraestructura/adapters/repositories/LogRepositoryImpl.java:26"
+                              }
+                            ],
+                            "name": "LogRepositoryImpl",
+                            "type": "class"
+                          }
+                        ],
+                        "name": "repositories",
+                        "type": "package"
+                      },
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "name": "logsFindAll",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java:33"
+                              }
+                            ],
+                            "name": "NotificationController",
+                            "type": "class"
+                          }
+                        ],
+                        "name": "controllers",
+                        "type": "package"
+                      }
+                    ],
+                    "name": "adapters",
+                    "type": "package"
+                  }
+                ],
+                "name": "infraestructura",
+                "type": "package"
+              }
+            ],
+            "name": "notification",
+            "type": "package"
+          }
+        ],
+        "name": "gila",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /notifications/logs"
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "children": [
+      {
+        "type": "function"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select l1_0.id,l1_0.category,l1_0.channel,l1_0.message,l1_0.timestamp,l1_0.user_email,l1_0.user_id,l1_0.user_name,l1_0.user_phone from logs l1_0"
+      }
+    ]
+  }
+]

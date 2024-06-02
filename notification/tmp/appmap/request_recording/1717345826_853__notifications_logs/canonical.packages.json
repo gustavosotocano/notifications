@@ -1,0 +1,4 @@
+[
+  "com/gila/notification/infraestructura/adapters/controllers",
+  "com/gila/notification/infraestructura/adapters/repositories"
+]

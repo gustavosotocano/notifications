@@ -1,0 +1,5 @@
+[
+  "com/gila/notification/application/ports/services",
+  "com/gila/notification/domain/ports",
+  "com/gila/notification/infraestructura/adapters/controllers"
+]

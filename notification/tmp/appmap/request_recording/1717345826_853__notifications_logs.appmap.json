@@ -1,0 +1,242 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "postman-token": "0e990d11-2500-440e-ac3c-f1908a199a9b",
+          "host": "localhost:8090",
+          "connection": "keep-alive",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.39.0",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/notifications/logs",
+        "path_info": "/notifications/logs",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 49
+    },
+    {
+      "defined_class": "com.gila.notification.infraestructura.adapters.controllers.NotificationController",
+      "event": "call",
+      "id": 2,
+      "lineno": 33,
+      "method_id": "logsFindAll",
+      "path": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java",
+      "receiver": {
+        "class": "com.gila.notification.infraestructura.adapters.controllers.NotificationController",
+        "object_id": 2003758509,
+        "value": "com.gila.notification.infraestructura.adapters.controllers.NotificationController@776eedad"
+      },
+      "static": false,
+      "thread_id": 49
+    },
+    {
+      "defined_class": "com.gila.notification.infraestructura.adapters.repositories.LogRepositoryImpl",
+      "event": "call",
+      "id": 3,
+      "lineno": 26,
+      "method_id": "findAll",
+      "path": "com/gila/notification/infraestructura/adapters/repositories/LogRepositoryImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.infraestructura.adapters.repositories.LogRepositoryImpl",
+        "object_id": 536041911,
+        "value": "com.gila.notification.infraestructura.adapters.repositories.LogRepositoryImpl@1ff359b7"
+      },
+      "static": false,
+      "thread_id": 49
+    },
+    {
+      "event": "call",
+      "id": 4,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": ""
+      },
+      "thread_id": 49
+    },
+    {
+      "elapsed": 0.0000601256,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 49
+    },
+    {
+      "event": "call",
+      "id": 6,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": "select l1_0.id,l1_0.category,l1_0.channel,l1_0.message,l1_0.timestamp,l1_0.user_email,l1_0.user_id,l1_0.user_name,l1_0.user_phone from logs l1_0"
+      },
+      "thread_id": 49
+    },
+    {
+      "elapsed": 0.0000222117,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "thread_id": 49
+    },
+    {
+      "elapsed": 0.014735595,
+      "event": "return",
+      "id": 8,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.util.ArrayList",
+        "object_id": 1066046935,
+        "value": "[com.gila.notification.domain.models.Log@6df3c56b, com.gila.notification.domain.models.Log@69d9742e, com.gila.notification.domain.models.Log@1334390e, com.gila.notification.domain.models.Log@6c2cd564, com.gila.notification.domain.models.Log@1f078d17, com.gila.notification.domain.models.Log@3d5df2dd, com.gila.notification.domain.models.Log@f934031, com.gila.notification.domain.models.Log@59e3352, com.gila.notification.domain.models.Log@26d279c3, com.gila.notification.domain.models.Log@74cbbcde, com.gila.notification.domain.models.Log@61cce8be, com.gila.notification.domain.models.Log@15bc5376, com.gila.notification.domain.models.Log@20953c63, com.gila.notification.domain.models.Log@99149e3, com.gila.notification.domain.models.Log@f9ec977, com.gila.notification.domain.models.Log@78ce0c11, com.gila.notification.domain.models.Log@71b1514f, com.gila.notification.domain.models.Log@726cd0cb, com.gila.notification.domain.models.Log@b407a80, com.gila.notification.domain.models.Log@3e6417d, com.gila.notification.doma..."
+      },
+      "thread_id": 49
+    },
+    {
+      "elapsed": 0.014772301,
+      "event": "return",
+      "id": 9,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1474731218,
+        "value": "<200 OK OK,[com.gila.notification.domain.models.Log@6df3c56b, com.gila.notification.domain.models.Log@69d9742e, com.gila.notification.domain.models.Log@1334390e, com.gila.notification.domain.models.Log@6c2cd564, com.gila.notification.domain.models.Log@1f078d17, com.gila.notification.domain.models.Log@3d5df2dd, com.gila.notification.domain.models.Log@f934031, com.gila.notification.domain.models.Log@59e3352, com.gila.notification.domain.models.Log@26d279c3, com.gila.notification.domain.models.Log@74cbbcde, com.gila.notification.domain.models.Log@61cce8be, com.gila.notification.domain.models.Log@15bc5376, com.gila.notification.domain.models.Log@20953c63, com.gila.notification.domain.models.Log@99149e3, com.gila.notification.domain.models.Log@f9ec977, com.gila.notification.domain.models.Log@78ce0c11, com.gila.notification.domain.models.Log@71b1514f, com.gila.notification.domain.models.Log@726cd0cb, com.gila.notification.domain.models.Log@b407a80, com.gila.notification.domain.models.Log@3e6417d, com.gila.notifi..."
+      },
+      "thread_id": 49
+    },
+    {
+      "elapsed": 0.02063364,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive",
+          "Date": "Sun, 02 Jun 2024 16:30:27 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 49
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /notifications/logs (200) - 11:30:26.853",
+    "app": "notification",
+    "language": {
+      "name": "java",
+      "version": "21.0.3+9-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {}
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "name": "findAll",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/infraestructura/adapters/repositories/LogRepositoryImpl.java:26"
+                                }
+                              ],
+                              "name": "LogRepositoryImpl",
+                              "type": "class"
+                            }
+                          ],
+                          "name": "repositories",
+                          "type": "package"
+                        },
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "name": "logsFindAll",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java:33"
+                                }
+                              ],
+                              "name": "NotificationController",
+                              "type": "class"
+                            }
+                          ],
+                          "name": "controllers",
+                          "type": "package"
+                        }
+                      ],
+                      "name": "adapters",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "infraestructura",
+                  "type": "package"
+                }
+              ],
+              "name": "notification",
+              "type": "package"
+            }
+          ],
+          "name": "gila",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /notifications/logs"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "children": [
+        {
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select l1_0.id,l1_0.category,l1_0.channel,l1_0.message,l1_0.timestamp,l1_0.user_email,l1_0.user_id,l1_0.user_name,l1_0.user_phone from logs l1_0"
+        }
+      ]
+    }
+  ]
+}

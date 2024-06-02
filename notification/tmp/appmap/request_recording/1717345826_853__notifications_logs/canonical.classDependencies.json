@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "GET /notifications/logs",
+    "callee": "com/gila"
+  },
+  {
+    "caller": "com/gila",
+    "callee": "#"
+  },
+  {
+    "caller": "com/gila",
+    "callee": "select l1_0.id,l1_0.category,l1_0.channel,l1_0.message,l1_0.timestamp,l1_0.user_email,l1_0.user_id,l1_0.user_name,l1_0.user_phone from logs l1_0"
+  }
+]

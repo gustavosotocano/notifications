@@ -1,0 +1,6 @@
+[
+  "",
+  "select c1_0.name from categories c1_0 where c1_0.name=?",
+  "select n1_0.categories_name,n1_0.id,n1_0.notification_type_name,n1_0.users_id from notifications n1_0 where n1_0.categories_name=?",
+  "select u1_0.id,u1_0.email,u1_0.name,u1_0.phone from users u1_0 where u1_0.id=?"
+]

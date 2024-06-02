@@ -1,0 +1,703 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "0",
+          "postman-token": "836dc779-9a59-4cc2-8381-21eca79ba055",
+          "host": "localhost:8090",
+          "connection": "keep-alive",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.39.0",
+          "accept": "*/*"
+        },
+        "normalized_path_info": "/notifications/send",
+        "path_info": "/notifications/send",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "category",
+          "object_id": 852321857,
+          "value": "Sports"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        }
+      ],
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.infraestructura.adapters.controllers.NotificationController",
+      "event": "call",
+      "id": 2,
+      "lineno": 24,
+      "method_id": "sendNotification",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "category",
+          "object_id": 852321857,
+          "value": "Sports"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        }
+      ],
+      "path": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java",
+      "receiver": {
+        "class": "com.gila.notification.infraestructura.adapters.controllers.NotificationController",
+        "object_id": 2003758509,
+        "value": "com.gila.notification.infraestructura.adapters.controllers.NotificationController@776eedad"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+      "event": "call",
+      "id": 3,
+      "lineno": 51,
+      "method_id": "sendNotifications",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "category",
+          "object_id": 852321857,
+          "value": "Sports"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        }
+      ],
+      "path": "com/gila/notification/application/ports/services/NotificationServiceImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+        "object_id": 301209060,
+        "value": "com.gila.notification.application.ports.services.NotificationServiceImpl@11f415e4"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "event": "call",
+      "id": 4,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": ""
+      },
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0000663054,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 48
+    },
+    {
+      "event": "call",
+      "id": 6,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": "select c1_0.name from categories c1_0 where c1_0.name=?"
+      },
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0001070142,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+      "event": "call",
+      "id": 8,
+      "lineno": 76,
+      "method_id": "sendChannelNotifications",
+      "parameters": [
+        {
+          "class": "com.gila.notification.domain.models.Category",
+          "kind": "req",
+          "name": "categories",
+          "object_id": 758392003,
+          "value": "com.gila.notification.domain.models.Category@2d3424c3"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        }
+      ],
+      "path": "com/gila/notification/application/ports/services/NotificationServiceImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+        "object_id": 301209060,
+        "value": "com.gila.notification.application.ports.services.NotificationServiceImpl@11f415e4"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "event": "call",
+      "id": 9,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": "select n1_0.categories_name,n1_0.id,n1_0.notification_type_name,n1_0.users_id from notifications n1_0 where n1_0.categories_name=?"
+      },
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0000404788,
+      "event": "return",
+      "id": 10,
+      "parent_id": 9,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+      "event": "call",
+      "id": 11,
+      "lineno": 96,
+      "method_id": "sendNotification",
+      "parameters": [
+        {
+          "class": "jdk.proxy2.$Proxy207",
+          "kind": "req",
+          "name": "notificationChannel",
+          "object_id": 1004860735,
+          "value": "com.gila.notification.domain.services.Email@1d2ec1f"
+        },
+        {
+          "class": "com.gila.notification.domain.models.User$HibernateProxy$9UF8Uu1p",
+          "kind": "req",
+          "name": "user",
+          "object_id": 558101763,
+          "value": "User(id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543, notifications=[com.gila.notification.domain.models.Notifications@4226e68c, com.gila.notification.domain.models.Notifications@1394a049, com.gila.notification.domain.models.Notifications@b4ca18e, com.gila.notification.domain.models.Notifications@1cb5abf5])"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "categoryName",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/application/ports/services/NotificationServiceImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+        "object_id": 301209060,
+        "value": "com.gila.notification.application.ports.services.NotificationServiceImpl@11f415e4"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "event": "call",
+      "id": 12,
+      "sql_query": {
+        "database_type": "PostgreSQL",
+        "sql": "select u1_0.id,u1_0.email,u1_0.name,u1_0.phone from users u1_0 where u1_0.id=?"
+      },
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0005136324,
+      "event": "return",
+      "id": 13,
+      "parent_id": 12,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.domain.ports.NotificationChannel",
+      "event": "call",
+      "id": 14,
+      "lineno": -1,
+      "method_id": "send",
+      "parameters": [
+        {
+          "class": "com.gila.notification.domain.models.UserDto",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 171882384,
+          "value": "UserDto[id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543]"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p1",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p2",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/domain/ports/NotificationChannel.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy207",
+        "object_id": 1004860735,
+        "value": "com.gila.notification.domain.services.Email@1d2ec1f"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.000164087,
+      "event": "return",
+      "id": 15,
+      "parent_id": 14,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0013445733,
+      "event": "return",
+      "id": 16,
+      "parent_id": 11,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+      "event": "call",
+      "id": 17,
+      "lineno": 96,
+      "method_id": "sendNotification",
+      "parameters": [
+        {
+          "class": "jdk.proxy2.$Proxy207",
+          "kind": "req",
+          "name": "notificationChannel",
+          "object_id": 513692991,
+          "value": "com.gila.notification.domain.services.Sms@c3fd72"
+        },
+        {
+          "class": "com.gila.notification.domain.models.User$HibernateProxy$9UF8Uu1p",
+          "kind": "req",
+          "name": "user",
+          "object_id": 558101763,
+          "value": "User(id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543, notifications=[com.gila.notification.domain.models.Notifications@4226e68c, com.gila.notification.domain.models.Notifications@1394a049, com.gila.notification.domain.models.Notifications@b4ca18e, com.gila.notification.domain.models.Notifications@1cb5abf5])"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "categoryName",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/application/ports/services/NotificationServiceImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+        "object_id": 301209060,
+        "value": "com.gila.notification.application.ports.services.NotificationServiceImpl@11f415e4"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.domain.ports.NotificationChannel",
+      "event": "call",
+      "id": 18,
+      "lineno": -1,
+      "method_id": "send",
+      "parameters": [
+        {
+          "class": "com.gila.notification.domain.models.UserDto",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1417351301,
+          "value": "UserDto[id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543]"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p1",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p2",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/domain/ports/NotificationChannel.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy207",
+        "object_id": 513692991,
+        "value": "com.gila.notification.domain.services.Sms@c3fd72"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0000844483,
+      "event": "return",
+      "id": 19,
+      "parent_id": 18,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0001267262,
+      "event": "return",
+      "id": 20,
+      "parent_id": 17,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+      "event": "call",
+      "id": 21,
+      "lineno": 96,
+      "method_id": "sendNotification",
+      "parameters": [
+        {
+          "class": "jdk.proxy2.$Proxy207",
+          "kind": "req",
+          "name": "notificationChannel",
+          "object_id": 1286275460,
+          "value": "com.gila.notification.domain.services.Push@379cfc77"
+        },
+        {
+          "class": "com.gila.notification.domain.models.User$HibernateProxy$9UF8Uu1p",
+          "kind": "req",
+          "name": "user",
+          "object_id": 558101763,
+          "value": "User(id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543, notifications=[com.gila.notification.domain.models.Notifications@4226e68c, com.gila.notification.domain.models.Notifications@1394a049, com.gila.notification.domain.models.Notifications@b4ca18e, com.gila.notification.domain.models.Notifications@1cb5abf5])"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "categoryName",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/application/ports/services/NotificationServiceImpl.java",
+      "receiver": {
+        "class": "com.gila.notification.application.ports.services.NotificationServiceImpl",
+        "object_id": 301209060,
+        "value": "com.gila.notification.application.ports.services.NotificationServiceImpl@11f415e4"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "defined_class": "com.gila.notification.domain.ports.NotificationChannel",
+      "event": "call",
+      "id": 22,
+      "lineno": -1,
+      "method_id": "send",
+      "parameters": [
+        {
+          "class": "com.gila.notification.domain.models.UserDto",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 552632963,
+          "value": "UserDto[id=1, name=gustavo soto, email=gustavosotc@gmail.com, phone=302445543]"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p1",
+          "object_id": 1951615309,
+          "value": "final de la champion League"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p2",
+          "object_id": 852321857,
+          "value": "Sports"
+        }
+      ],
+      "path": "com/gila/notification/domain/ports/NotificationChannel.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy207",
+        "object_id": 1286275460,
+        "value": "com.gila.notification.domain.services.Push@379cfc77"
+      },
+      "static": false,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0001470478,
+      "event": "return",
+      "id": 23,
+      "parent_id": 22,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.0002277993,
+      "event": "return",
+      "id": 24,
+      "parent_id": 21,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.003463912,
+      "event": "return",
+      "id": 25,
+      "parent_id": 8,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.012427308,
+      "event": "return",
+      "id": 26,
+      "parent_id": 3,
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.016748065,
+      "event": "return",
+      "id": 27,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 73461461,
+        "value": "<200 OK OK,Notifications sent,[]>"
+      },
+      "thread_id": 48
+    },
+    {
+      "elapsed": 0.02367969,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive",
+          "Content-Length": "18",
+          "Date": "Sun, 02 Jun 2024 16:30:21 GMT",
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 200
+      },
+      "id": 28,
+      "parent_id": 1,
+      "thread_id": 48
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /notifications/send (200) - 11:30:21.603",
+    "app": "notification",
+    "language": {
+      "name": "java",
+      "version": "21.0.3+9-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {}
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "send",
+                              "type": "function",
+                              "static": false,
+                              "location": "com/gila/notification/domain/ports/NotificationChannel.java:-1"
+                            }
+                          ],
+                          "name": "NotificationChannel",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "ports",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "domain",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "name": "sendNotification",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java:24"
+                                }
+                              ],
+                              "name": "NotificationController",
+                              "type": "class"
+                            }
+                          ],
+                          "name": "controllers",
+                          "type": "package"
+                        }
+                      ],
+                      "name": "adapters",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "infraestructura",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "name": "sendChannelNotifications",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:76"
+                                },
+                                {
+                                  "name": "sendNotifications",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:51"
+                                },
+                                {
+                                  "name": "sendNotification",
+                                  "type": "function",
+                                  "static": false,
+                                  "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:96"
+                                }
+                              ],
+                              "name": "NotificationServiceImpl",
+                              "type": "class"
+                            }
+                          ],
+                          "name": "services",
+                          "type": "package"
+                        }
+                      ],
+                      "name": "ports",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "application",
+                  "type": "package"
+                }
+              ],
+              "name": "notification",
+              "type": "package"
+            }
+          ],
+          "name": "gila",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /notifications/send"
+        }
+      ]
+    },
+    {
+      "type": "class",
+      "children": [
+        {
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select c1_0.name from categories c1_0 where c1_0.name=?"
+        },
+        {
+          "type": "query",
+          "name": "select n1_0.categories_name,n1_0.id,n1_0.notification_type_name,n1_0.users_id from notifications n1_0 where n1_0.categories_name=?"
+        },
+        {
+          "type": "query",
+          "name": "select u1_0.id,u1_0.email,u1_0.name,u1_0.phone from users u1_0 where u1_0.id=?"
+        }
+      ]
+    }
+  ]
+}

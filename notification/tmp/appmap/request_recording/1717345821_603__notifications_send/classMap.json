@@ -1,0 +1,152 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "send",
+                            "type": "function",
+                            "static": false,
+                            "location": "com/gila/notification/domain/ports/NotificationChannel.java:-1"
+                          }
+                        ],
+                        "name": "NotificationChannel",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "ports",
+                    "type": "package"
+                  }
+                ],
+                "name": "domain",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "name": "sendNotification",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/infraestructura/adapters/controllers/NotificationController.java:24"
+                              }
+                            ],
+                            "name": "NotificationController",
+                            "type": "class"
+                          }
+                        ],
+                        "name": "controllers",
+                        "type": "package"
+                      }
+                    ],
+                    "name": "adapters",
+                    "type": "package"
+                  }
+                ],
+                "name": "infraestructura",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "children": [
+                              {
+                                "name": "sendChannelNotifications",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:76"
+                              },
+                              {
+                                "name": "sendNotifications",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:51"
+                              },
+                              {
+                                "name": "sendNotification",
+                                "type": "function",
+                                "static": false,
+                                "location": "com/gila/notification/application/ports/services/NotificationServiceImpl.java:96"
+                              }
+                            ],
+                            "name": "NotificationServiceImpl",
+                            "type": "class"
+                          }
+                        ],
+                        "name": "services",
+                        "type": "package"
+                      }
+                    ],
+                    "name": "ports",
+                    "type": "package"
+                  }
+                ],
+                "name": "application",
+                "type": "package"
+              }
+            ],
+            "name": "notification",
+            "type": "package"
+          }
+        ],
+        "name": "gila",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /notifications/send"
+      }
+    ]
+  },
+  {
+    "type": "class",
+    "children": [
+      {
+        "type": "function"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select c1_0.name from categories c1_0 where c1_0.name=?"
+      },
+      {
+        "type": "query",
+        "name": "select n1_0.categories_name,n1_0.id,n1_0.notification_type_name,n1_0.users_id from notifications n1_0 where n1_0.categories_name=?"
+      },
+      {
+        "type": "query",
+        "name": "select u1_0.id,u1_0.email,u1_0.name,u1_0.phone from users u1_0 where u1_0.id=?"
+      }
+    ]
+  }
+]

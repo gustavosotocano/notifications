@@ -1,0 +1,4 @@
+[
+  "com/gila/notification/infraestructura/adapters/controllers/NotificationController",
+  "com/gila/notification/infraestructura/adapters/repositories/LogRepositoryImpl"
+]

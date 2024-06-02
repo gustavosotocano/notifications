@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /notifications/send",
+    "parameters": "(category,message)",
+    "status": 200
+  }
+]

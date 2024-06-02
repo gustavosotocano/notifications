@@ -1,0 +1,4 @@
+name: "notification"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.gila.notification"
