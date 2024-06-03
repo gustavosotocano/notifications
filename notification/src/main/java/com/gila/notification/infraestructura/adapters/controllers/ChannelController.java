@@ -1,11 +1,11 @@
 package com.gila.notification.infraestructura.adapters.controllers;
 
 import com.gila.notification.application.ports.ChannelService;
-import com.gila.notification.application.ports.NotificationService;
 import com.gila.notification.domain.models.Channel;
-import com.gila.notification.domain.ports.LogRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
