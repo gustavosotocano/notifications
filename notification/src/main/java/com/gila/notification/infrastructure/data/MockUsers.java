@@ -1,10 +1,10 @@
-package com.gila.notification.infraestructura.data;
+package com.gila.notification.infrastructure.data;
 
 
-import com.gila.notification.domain.models.Category;
 import com.gila.notification.domain.models.Channel;
 import com.gila.notification.domain.models.Notifications;
 import com.gila.notification.domain.models.User;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,8 +20,8 @@ public class MockUsers {
         );
 
         var categories = Arrays.asList(
-                new Category("Sports"),
-                new Category("Movie"));
+                new CategoryEntity("Sports"),
+                new CategoryEntity("Movie"));
 
         var notificationsType = Arrays.asList(
                 new Channel("Sms"),

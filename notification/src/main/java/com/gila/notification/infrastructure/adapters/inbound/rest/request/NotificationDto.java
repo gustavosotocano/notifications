@@ -1,4 +1,4 @@
-package com.gila.notification.infraestructura.adapters.model;
+package com.gila.notification.infrastructure.adapters.inbound.rest.request;
 
 
 import jakarta.validation.constraints.NotNull;

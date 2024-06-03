@@ -1,6 +1,8 @@
 package com.gila.notification.domain.models;
 
 
+
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -23,7 +25,7 @@ public class Notifications {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_name", nullable = false,foreignKey = @ForeignKey(name = "fk_category_notification"))
-    private Category categoriesName;
+    private CategoryEntity categoriesName;
 
     /**
      * User ID.

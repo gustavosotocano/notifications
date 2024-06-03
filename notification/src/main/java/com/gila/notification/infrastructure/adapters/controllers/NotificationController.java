@@ -1,8 +1,8 @@
-package com.gila.notification.infraestructura.adapters.controllers;
+package com.gila.notification.infrastructure.adapters.controllers;
 
 import com.gila.notification.application.ports.NotificationService;
 import com.gila.notification.domain.ports.LogRepository;
-import com.gila.notification.infraestructura.adapters.model.NotificationDto;
+import com.gila.notification.infrastructure.adapters.inbound.rest.request.NotificationDto;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

@@ -1,4 +1,4 @@
-package com.gila.notification.infraestructura.adapters.controllers;
+package com.gila.notification.infrastructure.adapters.controllers;
 
 import com.gila.notification.application.ports.ChannelService;
 import com.gila.notification.domain.models.Channel;

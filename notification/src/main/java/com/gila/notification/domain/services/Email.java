@@ -1,6 +1,6 @@
 package com.gila.notification.domain.services;
 
-import com.gila.notification.domain.models.Log;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
 import com.gila.notification.domain.models.UserDto;
 import com.gila.notification.domain.ports.LogRepository;
 import com.gila.notification.domain.ports.NotificationChannel;
@@ -23,8 +23,8 @@ public class Email implements NotificationChannel {
     @Override
     @Async
     public void send(UserDto user, String message, String category) {
-        Log log = new Log(message, category,
-                          user.id(), user.name(), user.email(), user.phone(), NOTIFICATION_TYPE_EMAIL, new Date());
+        LogEntity log = new LogEntity(message, category,
+                                      user.id(), user.name(), user.email(), user.phone(), NOTIFICATION_TYPE_EMAIL, new Date());
         logRepository.save(log);
         System.out.println("Email sent " + user.name());
     }

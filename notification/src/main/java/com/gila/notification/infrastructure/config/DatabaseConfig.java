@@ -1,4 +1,4 @@
-package com.gila.notification.infraestructura.config;
+package com.gila.notification.infrastructure.config;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -2,10 +2,8 @@ package com.gila.notification.application.ports.services;
 
 
 import com.gila.notification.application.ports.NotificationService;
-import com.gila.notification.domain.models.Category;
-import com.gila.notification.domain.models.Channel;
-import com.gila.notification.domain.models.User;
-import com.gila.notification.domain.models.UserDto;
+
+import com.gila.notification.domain.models.*;
 import com.gila.notification.domain.ports.CategoryRepository;
 import com.gila.notification.domain.ports.NotificationChannel;
 import org.springframework.stereotype.Service;
@@ -23,24 +21,18 @@ public class NotificationServiceImpl implements NotificationService {
 
     public NotificationServiceImpl(CategoryRepository categoryRepository,
                                    Map<String, NotificationChannel> notificationChannels) {
-
         this.categoryRepository = categoryRepository;
         this.notificationChannels = notificationChannels;
     }
 
     @Override
     public void sendNotifications(String category, String message) {
-        Category categories = categoryRepository.findById(category)
+        CategoryNotifications categories = categoryRepository.findById(category)
                 .orElseThrow(() -> new CategoryNotFoundException("category not found - " + category));
-        processUserNotifications(categories, message);
+        sendChannelNotifications(categories, message);
     }
 
-    private void processUserNotifications(Category category, String message) {
-        sendChannelNotifications(category, message);
-    }
-
-
-    public void sendChannelNotifications(Category categories, String message) {
+    public void sendChannelNotifications(CategoryNotifications categories, String message) {
         categories.getNotifications()
                 .stream()
                 .map(notification -> {
@@ -62,10 +54,7 @@ public class NotificationServiceImpl implements NotificationService {
         notificationChannel.send(userDto, message, categoryName);
     }
 
-
     private UserDto UserToDto(User user) {
         return new UserDto(user.getId(), user.getName(), user.getEmail(), user.getPhone());
     }
-
-
 }

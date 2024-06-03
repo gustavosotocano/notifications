@@ -1,8 +1,8 @@
-package com.gila.notification.infraestructura.adapters.repositories;
+package com.gila.notification.infrastructure.adapters.repositories;
 
-import com.gila.notification.domain.models.Log;
 import com.gila.notification.domain.ports.LogRepository;
-import com.gila.notification.infraestructura.repositories.LogJpaRepository;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
+import com.gila.notification.infrastructure.repositories.LogJpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
@@ -19,17 +19,18 @@ public class LogRepositoryImpl implements LogRepository {
     }
 
     @Override
-    public void save(Log log) {
+    public void save(LogEntity log) {
         logJpaRepository.save(log);
     }
 
     @Override
-    public List<Log> findAll() {
+    public List<LogEntity> findAll() {
         return logJpaRepository.findAll();
     }
 
     @Override
-    public Page<Log> findAllPageable(  Pageable pageable){
+    public Page<LogEntity> findAllPageable(Pageable pageable){
+
         return logJpaRepository.findAll( pageable) ;
     }
 }
