@@ -3,6 +3,8 @@ package com.gila.notification.infraestructura.adapters.repositories;
 import com.gila.notification.domain.models.Log;
 import com.gila.notification.domain.ports.LogRepository;
 import com.gila.notification.infraestructura.repositories.LogJpaRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,5 +26,10 @@ public class LogRepositoryImpl implements LogRepository {
     @Override
     public List<Log> findAll() {
         return logJpaRepository.findAll();
+    }
+
+    @Override
+    public Page<Log> findAllPageable(  Pageable pageable){
+        return logJpaRepository.findAll( pageable) ;
     }
 }

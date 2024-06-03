@@ -1,5 +1,6 @@
 package com.gila.notification.domain.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class Channel {
     private String name;
 
     @OneToMany(mappedBy = "channels")
+    @JsonIgnore
     private List<Notifications> notifications;
 
     public Channel(String name) {

@@ -1,5 +1,6 @@
 package com.gila.notification.domain.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -20,9 +21,11 @@ public class Category {
     @Id
     @Size(max = 50)
     @Column(name = "name", nullable = false)
+
     private String name;
 
     @OneToMany(mappedBy = "categoriesName")
+    @JsonIgnore
     private  List<Notifications> notifications;
 
     public Category(String name) {
