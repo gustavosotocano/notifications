@@ -1,0 +1,42 @@
+<div >
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Subscribed</th>
+      <th>Channel</th>
+      <th>Message</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of logs | paginate: { itemsPerPage: 5, currentPage: pageIndex,
+        totalItems: totalCount }">
+      <td>{{ row.id }}</td>
+      <td>{{ row.userName }}</td>
+      <td>{{ row.userEmail }}</td>
+      <td>{{ row.userPhone }}</td>
+      <td>{{ row.category }}</td>
+      <td>{{ row.channel }}</td>
+      <td>{{ row.message }}</td>
+
+
+      <td>{{ row.timestamp }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+<div class="col-md-12">
+  <pagination-controls
+    previousLabel="Previous"
+    nextLabel="Next"
+    [responsive]="true"
+    (pageChange)="handlePageChange($event)"
+  ></pagination-controls>
+</div>

@@ -1,0 +1,41 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination .page-item {
+  margin-right: 5px;
+}
+
+.pagination .page-link {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+}
+
+.pagination .page-link:hover {
+  background-color: #e2e2e2;
+}
+
+.pagination .page-link.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+div {
+  margin: 10px 0;
+}
