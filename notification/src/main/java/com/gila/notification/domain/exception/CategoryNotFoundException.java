@@ -1,4 +1,4 @@
-package com.gila.notification.application.ports.services;
+package com.gila.notification.domain.exception;
 
 public class CategoryNotFoundException extends RuntimeException {
     public CategoryNotFoundException(String message) {

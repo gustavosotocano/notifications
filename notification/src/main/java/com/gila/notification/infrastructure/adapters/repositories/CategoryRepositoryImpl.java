@@ -1,6 +1,6 @@
 package com.gila.notification.infrastructure.adapters.repositories;
 
-import com.gila.notification.application.ports.services.CategoryNotFoundException;
+import com.gila.notification.domain.exception.CategoryNotFoundException;
 import com.gila.notification.domain.models.Category;
 import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.domain.ports.CategoryRepository;

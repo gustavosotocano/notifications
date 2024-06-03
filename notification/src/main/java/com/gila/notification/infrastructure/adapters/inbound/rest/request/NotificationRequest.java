@@ -9,7 +9,7 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class NotificationDto {
+public class NotificationRequest {
 
     @NotNull
     private String category;

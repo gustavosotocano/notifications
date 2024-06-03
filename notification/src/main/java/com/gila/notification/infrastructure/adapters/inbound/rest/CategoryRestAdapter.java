@@ -1,4 +1,4 @@
-package com.gila.notification.infrastructure.adapters.controllers;
+package com.gila.notification.infrastructure.adapters.inbound.rest;
 
 import com.gila.notification.application.ports.CategoryService;
 import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.CategoryRestMapper;
@@ -13,12 +13,12 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 360000)
-public class CategoryController {
+public class CategoryRestAdapter {
 
     private final CategoryService categoryService;
     private final CategoryRestMapper categoryRestMapper = Mappers.getMapper(CategoryRestMapper.class);
 
-    public CategoryController(CategoryService categoryService) {
+    public CategoryRestAdapter(CategoryService categoryService) {
         this.categoryService = categoryService;
 
     }

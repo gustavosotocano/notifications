@@ -3,9 +3,11 @@ package com.gila.notification.application.ports.services;
 
 import com.gila.notification.application.ports.NotificationService;
 
+import com.gila.notification.domain.exception.CategoryNotFoundException;
 import com.gila.notification.domain.models.*;
 import com.gila.notification.domain.ports.CategoryRepository;
 import com.gila.notification.domain.ports.NotificationChannel;
+import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 import org.springframework.stereotype.Service;
 
 import java.util.AbstractMap;

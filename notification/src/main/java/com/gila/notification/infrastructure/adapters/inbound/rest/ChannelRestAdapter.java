@@ -1,4 +1,4 @@
-package com.gila.notification.infrastructure.adapters.controllers;
+package com.gila.notification.infrastructure.adapters.inbound.rest;
 
 import com.gila.notification.application.ports.ChannelService;
 import com.gila.notification.domain.models.Channel;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 360000)
-public class ChannelController {
+public class ChannelRestAdapter {
 
     private final ChannelService channelService;
 
 
 
-    public ChannelController(ChannelService channelService) {
+    public ChannelRestAdapter(ChannelService channelService) {
         this.channelService = channelService;
 
     }
