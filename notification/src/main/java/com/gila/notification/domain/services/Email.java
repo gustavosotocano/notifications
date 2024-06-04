@@ -1,12 +1,9 @@
 package com.gila.notification.domain.services;
 
-import com.gila.notification.application.port.outbound.ChannelPersistencePort;
 import com.gila.notification.application.port.outbound.LogsPersistencePort;
 import com.gila.notification.domain.models.Log;
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
-import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
-import com.gila.notification.domain.ports.LogRepository;
 import com.gila.notification.domain.models.NotificationChannel;
+import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,5 @@
 package com.gila.notification.domain.models;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

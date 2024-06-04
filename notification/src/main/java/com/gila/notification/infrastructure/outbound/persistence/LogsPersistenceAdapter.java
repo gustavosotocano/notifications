@@ -3,7 +3,6 @@ package com.gila.notification.infrastructure.outbound.persistence;
 import com.gila.notification.application.port.outbound.LogsPersistencePort;
 import com.gila.notification.domain.models.Log;
 import com.gila.notification.domain.ports.LogRepository;
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
 import com.gila.notification.infrastructure.outbound.persistence.mapper.LogPersistenceMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
