@@ -1,8 +1,8 @@
-package com.gila.notification.domain.models;
+package com.gila.notification.infrastructure.adapters.outbound.persistence.entity;
 
 
 
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
+import com.gila.notification.domain.models.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,7 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "notifications")
-public class Notifications {
+public class NotificationEntity {
     @Id
     private Integer id;
     /**
@@ -33,7 +33,7 @@ public class Notifications {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "users_id", nullable = false,foreignKey = @ForeignKey(name = "fk_user_notification"))
-    private  User users;
+    private User users;
 
     /**
      * Notification Type.
@@ -41,7 +41,7 @@ public class Notifications {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "channel_name", nullable = false,foreignKey = @ForeignKey(name = "fk_channel_notification"))
-    private Channel channels;
+    private ChannelEntity channels;
 
 
 

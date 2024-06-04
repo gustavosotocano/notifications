@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface CategoryRepository  {
     List<Category> findAll();
-    Optional<CategoryNotifications>  findById(String categoryName);
+    Optional<CategoryNotifications>  findByCategory(String categoryName);
 }

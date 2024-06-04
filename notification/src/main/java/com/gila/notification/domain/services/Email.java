@@ -3,7 +3,7 @@ package com.gila.notification.domain.services;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
 import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 import com.gila.notification.domain.ports.LogRepository;
-import com.gila.notification.domain.ports.NotificationChannel;
+import com.gila.notification.domain.models.NotificationChannel;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.gila.notification.domain.ports;
+package com.gila.notification.domain.models;
 
 import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 

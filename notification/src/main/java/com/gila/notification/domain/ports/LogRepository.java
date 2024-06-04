@@ -1,5 +1,6 @@
 package com.gila.notification.domain.ports;
 
+import com.gila.notification.domain.models.Log;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.LogEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,5 +12,5 @@ public interface LogRepository {
 
     List<LogEntity> findAll();
 
-    Page<LogEntity> findAllPageable(Pageable pageable);
+    Page<Log> findAllPageable(Pageable pageable);
 }

@@ -1,5 +1,6 @@
 package com.gila.notification.infrastructure.adapters.outbound.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -15,17 +16,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "categories")
-public class CategoryEntity {
+@Table(name = "channels")
+public class ChannelEntity {
     @Id
     @Size(max = 50)
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "categoriesName")
-    private  List<NotificationEntity> notifications;
+    @OneToMany(mappedBy = "channels")
+    @JsonIgnore
+    private List<NotificationEntity> notifications;
 
-    public CategoryEntity(String name) {
+    public ChannelEntity(String name) {
         this.name = name;
     }
 }

@@ -1,6 +1,6 @@
 package com.gila.notification.infrastructure.adapters.inbound.rest;
 
-import com.gila.notification.application.ports.LogService;
+import com.gila.notification.application.port.inbound.GetLogsUseCase;
 import com.gila.notification.domain.exception.HeaderNotFoundException;
 import com.gila.notification.domain.models.Log;
 import org.springframework.data.domain.Page;
@@ -15,11 +15,14 @@ import java.util.Objects;
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 360000)
 public class LogRestAdapter {
 
-    private final LogService logService;
 
-    public LogRestAdapter(LogService logService) {
-        this.logService = logService;
+
+    public LogRestAdapter(GetLogsUseCase getLogsUseCase) {
+
+        this.getLogsUseCase = getLogsUseCase;
     }
+
+private final GetLogsUseCase getLogsUseCase;
 
 
     @GetMapping("/v1/logs")
@@ -32,7 +35,7 @@ public class LogRestAdapter {
             throw new HeaderNotFoundException("005","Header GILA-X-SIZE is null");
         }
         Pageable pageable = PageRequest.of(Integer.parseInt(page), Integer.parseInt(size));
-        var logs= logService.findAllPageable(pageable);
+        var logs= getLogsUseCase.findAllPageable(pageable);
         return ResponseEntity.ok(logs);
     }
 }

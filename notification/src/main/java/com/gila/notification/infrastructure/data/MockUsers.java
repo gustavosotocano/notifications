@@ -1,8 +1,8 @@
 package com.gila.notification.infrastructure.data;
 
 
-import com.gila.notification.domain.models.Channel;
-import com.gila.notification.domain.models.Notifications;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.ChannelEntity;
 import com.gila.notification.domain.models.User;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MockUsers {
 
-    public static List<Notifications> getUsers() {
+    public static List<NotificationEntity> getUsers() {
 
         var users = Arrays.asList(
                 new User(1L, "Alice", "alice@example.com", "1234567890"),
@@ -24,16 +24,16 @@ public class MockUsers {
                 new CategoryEntity("Movie"));
 
         var notificationsType = Arrays.asList(
-                new Channel("Sms"),
-                new Channel("Email"),
-                new Channel("Push")
+                new ChannelEntity("Sms"),
+                new ChannelEntity("Email"),
+                new ChannelEntity("Push")
 
         );
 
 
         return Arrays.asList(
-                new Notifications(1, categories.get(0), users.get(0), notificationsType.get(0) ),
-                new Notifications(2, categories.get(1) , users.get(1), notificationsType.get(1) )
+                new NotificationEntity(1, categories.get(0), users.get(0), notificationsType.get(0) ),
+                new NotificationEntity(2, categories.get(1) , users.get(1), notificationsType.get(1) )
 
         );
 

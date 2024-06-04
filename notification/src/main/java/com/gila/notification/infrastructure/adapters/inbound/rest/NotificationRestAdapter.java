@@ -1,8 +1,10 @@
 package com.gila.notification.infrastructure.adapters.inbound.rest;
 
-import com.gila.notification.application.ports.NotificationService;
+import com.gila.notification.application.port.inbound.CreateNotificationUseCase;
+import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
 import com.gila.notification.infrastructure.adapters.inbound.rest.request.NotificationRequest;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,20 +13,22 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 360000)
 public class NotificationRestAdapter {
 
-    private final NotificationService notificationService;
+    private final CreateNotificationUseCase createNotificationUseCase;
+    private final NotificationRestMapper notificationRestMapper;
 
-    public NotificationRestAdapter(NotificationService notificationService) {
-        this.notificationService = notificationService;
+    public NotificationRestAdapter(CreateNotificationUseCase createNotificationUseCase,
+                                   NotificationRestMapper notificationRestMapper) {
+        this.createNotificationUseCase = createNotificationUseCase;
+        this.notificationRestMapper = notificationRestMapper;
 
     }
 
     @PostMapping("/v1/send")
-    public ResponseEntity<Object> sendNotification(@Valid @RequestBody NotificationRequest notificationRequest) {
-        try {
-            notificationService.sendNotifications(notificationRequest.getCategory(), notificationRequest.getMessage());
-            return ResponseEntity.ok(notificationRequest);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    public ResponseEntity<NotificationRequest> sendNotification(@Valid @RequestBody NotificationRequest notificationRequest) {
+
+        createNotificationUseCase.createNotification(notificationRestMapper.toModel(notificationRequest));
+
+        return new ResponseEntity<>(notificationRequest, HttpStatus.CREATED);
+
     }
 }

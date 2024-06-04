@@ -1,6 +1,7 @@
 package com.gila.notification.domain.models;
 
 
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,7 +26,7 @@ public class User {
     private String phone;
 
     @OneToMany(mappedBy = "users")
-    private List<Notifications> notifications  ;
+    private List<NotificationEntity> notifications  ;
 
     public User(Long id, String name, String email, String phone) {
         this.id = id;
