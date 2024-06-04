@@ -25,7 +25,7 @@ public class LogRepositoryImpl implements LogRepository {
 
     @Override
     public void save(LogEntity log) {
-        logJpaRepository.save(log);            ;
+        logJpaRepository.save(log);  
     }
 
     @Override
