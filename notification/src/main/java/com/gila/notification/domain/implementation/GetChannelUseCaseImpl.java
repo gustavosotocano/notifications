@@ -14,9 +14,6 @@ public class GetChannelUseCaseImpl implements GetChannelUseCase {
 
     private final ChannelPersistencePort channelPersistencePort;
 
-
-
-
     @Override
     public List<ChannelNotifications> findByAll(){
 return channelPersistencePort.findByAll();

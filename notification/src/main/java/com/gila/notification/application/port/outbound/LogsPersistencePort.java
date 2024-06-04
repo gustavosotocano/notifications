@@ -6,4 +6,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface LogsPersistencePort {
     Page<Log> findAllPageable(Pageable pageable);
+     void save(Log log);
+
 }

@@ -1,17 +1,16 @@
 package com.gila.notification.domain.models;
 
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
 public class Log {
-    private Long id;
+
     private String message;
 
     private String category;
@@ -23,6 +22,5 @@ public class Log {
 
     private String channel;
     private Date timestamp;
-
 
 }
