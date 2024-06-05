@@ -1,15 +1,20 @@
-package com.gila.notification.infrastructure.data;
+package com.gila.notification.domain.implementation.testobjctmapper;
 
 
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.ChannelEntity;
+import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.domain.models.User;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.ChannelEntity;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class MockUsers {
+
+
+
+
 
     public static List<NotificationEntity> getUsers() {
 
@@ -42,4 +47,12 @@ public class MockUsers {
                 new User(2L, "Bob", "bob@example.com", "0987654321"));
     }*/
     }
+    public static  CategoryNotifications getCategoryNotifications() {
+      CategoryNotifications categoryNotifications = new CategoryNotifications();
+      categoryNotifications.setName("Sports");
+      categoryNotifications.setNotifications(getUsers());
+
+     return categoryNotifications;
+    }
+
 }

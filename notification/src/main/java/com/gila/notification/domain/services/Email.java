@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 
@@ -28,7 +29,8 @@ public class Email implements NotificationChannel {
         Log log = new Log(message, category,
                                 user.id(), user.name(), user.email(), user.phone(), NOTIFICATION_TYPE_EMAIL, new Date());
         logsPersistencePort.save(log);
-        System.out.println("Email sent " + user.name());
+
+
     }
 
 

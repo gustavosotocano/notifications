@@ -1,28 +1,27 @@
-package com.gila.notification.infrastructure.outbound.persistence;
+package com.gila.notification.infrastructure.adapters.outbound.persistence;
 
-import com.gila.notification.application.port.outbound.CategoryPersistencePort;
-import com.gila.notification.domain.models.Category;
-import com.gila.notification.domain.models.CategoryNotifications;
-import com.gila.notification.domain.ports.CategoryRepository;
+import com.gila.notification.application.port.outbound.ChannelPersistencePort;
+import com.gila.notification.domain.models.Channel;
+import com.gila.notification.domain.models.ChannelNotifications;
+import com.gila.notification.domain.ports.ChannelRepository;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RequiredArgsConstructor
-public class CategoryPersistenceAdapter implements CategoryPersistencePort {
+public class ChannelPersistenceAdapter implements ChannelPersistencePort {
 
-    private final CategoryRepository categoryRepository;
+    private final ChannelRepository channelRepository;
+
 
     @Override
-    public Optional<CategoryNotifications> getCategoryById(String category) { 
-        return categoryRepository.findByCategory(category);
-
+    public List<ChannelNotifications> findByAll() {
+        return channelRepository.findAll();
     }
     @Override
-    public List<Category> getClientByAll() {
-        return categoryRepository.findAll();
+    public List<Channel> findChannels() {
+        return channelRepository.findChannels();
     }
 /*
     @Override

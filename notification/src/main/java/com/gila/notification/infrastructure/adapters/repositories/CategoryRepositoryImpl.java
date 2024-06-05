@@ -4,9 +4,9 @@ import com.gila.notification.domain.exception.CategoryNotFoundException;
 import com.gila.notification.domain.models.Category;
 import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.domain.ports.CategoryRepository;
-import com.gila.notification.infrastructure.outbound.persistence.mapper.CategoryNotificationsPersistenceMapper;
-import com.gila.notification.infrastructure.outbound.persistence.mapper.CategoryPersistenceMapper;
-import com.gila.notification.infrastructure.repositories.CategoryJpaRepository;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.mapper.CategoryNotificationsPersistenceMapper;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.mapper.CategoryPersistenceMapper;
+import com.gila.notification.infrastructure.outbound.persistence.repositories.CategoryJpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

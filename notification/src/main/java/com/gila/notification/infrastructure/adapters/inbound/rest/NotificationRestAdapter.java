@@ -1,6 +1,7 @@
 package com.gila.notification.infrastructure.adapters.inbound.rest;
 
 import com.gila.notification.application.port.inbound.CreateNotificationUseCase;
+import com.gila.notification.domain.models.Notification;
 import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
 import com.gila.notification.infrastructure.adapters.inbound.rest.request.NotificationRequest;
 import jakarta.validation.Valid;
@@ -14,21 +15,21 @@ import org.springframework.web.bind.annotation.*;
 public class NotificationRestAdapter {
 
     private final CreateNotificationUseCase createNotificationUseCase;
-    private final NotificationRestMapper notificationRestMapper;
+
 
     public NotificationRestAdapter(CreateNotificationUseCase createNotificationUseCase,
                                    NotificationRestMapper notificationRestMapper) {
         this.createNotificationUseCase = createNotificationUseCase;
-        this.notificationRestMapper = notificationRestMapper;
+
 
     }
 
     @PostMapping("/v1/send")
-    public ResponseEntity<NotificationRequest> sendNotification(@Valid @RequestBody NotificationRequest notificationRequest) {
+    public ResponseEntity<Notification> sendNotification(@Valid @RequestBody NotificationRequest notificationRequest) {
 
-        createNotificationUseCase.createNotification(notificationRestMapper.toModel(notificationRequest));
+        Notification notification=  createNotificationUseCase.createNotification(notificationRequest);
 
-        return new ResponseEntity<>(notificationRequest, HttpStatus.CREATED);
+        return new ResponseEntity<>(notification, HttpStatus.CREATED);
 
     }
 }

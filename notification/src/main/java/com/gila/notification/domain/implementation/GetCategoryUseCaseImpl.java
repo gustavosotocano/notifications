@@ -27,20 +27,7 @@ public class GetCategoryUseCaseImpl implements GetCategoryUseCase {
 
     @Override
     public List<Category> findByAll() {
-/*
-        var categoriesResponse=categoryPersistencePort..stream()
-                .map(categoryPersistenceMapper::toCategoryResponse)
-                .toList();
-        */
-
         return categoryPersistencePort.getClientByAll();
     }
-/*
-    @Override
-    public Optional<Client> getClientByEmail(String eMail) throws ClientNotFoundException {
-        return clientPersistencePort.findByEmail(eMail);
 
-
-    }
-*/
 }

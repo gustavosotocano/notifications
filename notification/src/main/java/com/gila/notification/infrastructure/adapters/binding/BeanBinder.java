@@ -9,10 +9,11 @@ import com.gila.notification.domain.models.NotificationChannel;
 import com.gila.notification.domain.ports.CategoryRepository;
 import com.gila.notification.domain.ports.ChannelRepository;
 import com.gila.notification.domain.ports.LogRepository;
-import com.gila.notification.infrastructure.outbound.persistence.CategoryPersistenceAdapter;
-import com.gila.notification.infrastructure.outbound.persistence.ChannelPersistenceAdapter;
-import com.gila.notification.infrastructure.outbound.persistence.LogsPersistenceAdapter;
-import com.gila.notification.infrastructure.outbound.persistence.mapper.LogPersistenceMapper;
+import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.CategoryPersistenceAdapter;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.ChannelPersistenceAdapter;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.LogsPersistenceAdapter;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.mapper.LogPersistenceMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -41,8 +42,9 @@ public class BeanBinder {
 
     @Bean
     public CreateNotificationUseCaseImpl createNotificationUseCase(GetCategoryUseCase getCategoryUseCase,
-                                                                   Map<String, NotificationChannel> notificationChannels) {
-        return new CreateNotificationUseCaseImpl(getCategoryUseCase, notificationChannels);
+                                                                   Map<String, NotificationChannel> notificationChannels,
+                                                                   NotificationRestMapper notificationRestMapper) {
+        return new CreateNotificationUseCaseImpl(getCategoryUseCase, notificationChannels,notificationRestMapper);
     }
 
     @Bean

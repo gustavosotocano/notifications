@@ -6,9 +6,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-@AllArgsConstructor
-public class Log {
 
+public class Log {
+    private Long id;
     private String message;
 
     private String category;
@@ -21,4 +21,14 @@ public class Log {
     private String channel;
     private Date timestamp;
 
+    public Log(String message, String category, long userId, String userName, String userEmail, String userPhone, String channel, Date timestamp) {
+        this.message = message;
+        this.category = category;
+        this.userId = userId;
+        this.userName = userName;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
+        this.channel = channel;
+        this.timestamp = timestamp;
+    }
 }
