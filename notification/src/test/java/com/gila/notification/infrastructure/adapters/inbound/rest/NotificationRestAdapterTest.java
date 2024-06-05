@@ -1,6 +1,7 @@
 package com.gila.notification.infrastructure.adapters.inbound.rest;
 
 import com.gila.notification.application.port.inbound.CreateNotificationUseCase;
+import com.gila.notification.application.port.inbound.GetNotificationUseCase;
 import com.gila.notification.domain.implementation.testobjctmapper.LogTestObjectMother;
 import com.gila.notification.domain.models.Notification;
 import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
@@ -19,11 +20,12 @@ import static org.mockito.Mockito.*;
 public class NotificationRestAdapterTest {
 
     private final   CreateNotificationUseCase createNotificationUseCase=mock(CreateNotificationUseCase.class);
-    private final   NotificationRestMapper notificationRestMapper=mock(NotificationRestMapper.class);
+    private final GetNotificationUseCase getNotificationUseCase  =mock(GetNotificationUseCase.class);
+  //  private final   NotificationRestMapper notificationRestMapper=mock(NotificationRestMapper.class);
 
 
     private final NotificationRestAdapter notificationRestAdapter = new NotificationRestAdapter(createNotificationUseCase,
-                                                                             notificationRestMapper);
+                                                                                                getNotificationUseCase);
 
 
     @Test

@@ -1,7 +1,6 @@
 package com.gila.notification.domain.models;
 
 
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,5 +11,5 @@ import java.util.List;
 @Setter
 public class CategoryNotifications {
     private String name;
-    private List<NotificationEntity> notifications;
+    private List<Notifications> notifications;
 }

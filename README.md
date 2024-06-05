@@ -24,4 +24,6 @@ To add another channel, you must create a class that implements the class implem
 NotificationChannel. The name of the class must be the same as that configured in the channels 
 table and with that we already have another channel configured.
 
+### Documentation
 
+En la ruta http://localhost:8090/swagger-ui/index.html#/ se encuentra el swagger de la aplicación

@@ -1,18 +1,17 @@
 package com.gila.notification.infrastructure.adapters.binding;
 
 import com.gila.notification.application.port.inbound.GetCategoryUseCase;
-import com.gila.notification.domain.implementation.CreateNotificationUseCaseImpl;
-import com.gila.notification.domain.implementation.GetCategoryUseCaseImpl;
-import com.gila.notification.domain.implementation.GetChannelUseCaseImpl;
-import com.gila.notification.domain.implementation.GetLogUseCaseImpl;
+import com.gila.notification.domain.implementation.*;
 import com.gila.notification.domain.models.NotificationChannel;
 import com.gila.notification.domain.ports.CategoryRepository;
 import com.gila.notification.domain.ports.ChannelRepository;
 import com.gila.notification.domain.ports.LogRepository;
+import com.gila.notification.domain.ports.NotificationsRepository;
 import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.CategoryPersistenceAdapter;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.ChannelPersistenceAdapter;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.LogsPersistenceAdapter;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.NotificationsPersistenceAdapter;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.mapper.LogPersistenceMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,6 +37,10 @@ public class BeanBinder {
     public ChannelPersistenceAdapter channelPersistenceAdapter(ChannelRepository channelRepository) {
         return new ChannelPersistenceAdapter(channelRepository);
     }
+    @Bean
+    public NotificationsPersistenceAdapter notificationsPersistenceAdapter(NotificationsRepository notificationsRepository) {
+        return new NotificationsPersistenceAdapter(notificationsRepository);
+    }
 
 
     @Bean
@@ -62,6 +65,12 @@ public class BeanBinder {
     public GetChannelUseCaseImpl getChannelUseCase(ChannelPersistenceAdapter channelPersistenceAdapter) {
         return new GetChannelUseCaseImpl(channelPersistenceAdapter);
     }
+    @Bean
+    public GetNotificationUseCaseImpl getNotificationUseCase(NotificationsPersistenceAdapter notificationPersistenceAdapter) {
+        return new GetNotificationUseCaseImpl(notificationPersistenceAdapter);
+    }
+
+
 
        /*
     @Bean

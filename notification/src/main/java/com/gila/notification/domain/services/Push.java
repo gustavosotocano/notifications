@@ -22,7 +22,7 @@ public class Push implements NotificationChannel {
     }
 
     @Override
-@Async
+    @Async
     public  void send(UserDto user, String message, String category) {
         Log log = new Log(  message, category,
                                 user.id(), user.name(), user.email(), user.phone(), NOTIFICATION_TYPE_PUSH, new Date());
