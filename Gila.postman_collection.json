@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "430965a1-7792-49d7-8123-470c402ebca6",
+		"name": "Gila",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6430739"
+	},
+	"item": [
+		{
+			"name": "logs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "GILA-X-PAGE",
+						"value": "1"
+					},
+					{
+						"key": "GILA-X-SIZE",
+						"value": "5"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/notifications/v1/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"notifications",
+						"v1",
+						"logs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notifiactions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "GILA-X-PAGE",
+						"value": "1"
+					},
+					{
+						"key": "GILA-X-SIZE",
+						"value": "5"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/notifications/v1/subscribed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"notifications",
+						"v1",
+						"subscribed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Channels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/v1/channels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"v1",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"category\":\"Finance\",\n \"message\":\"El madrid gano la Championsfcf\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/notifications/v1/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"notifications",
+						"v1",
+						"send"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
