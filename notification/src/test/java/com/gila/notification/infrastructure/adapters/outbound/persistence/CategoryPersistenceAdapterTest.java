@@ -1,6 +1,5 @@
 package com.gila.notification.infrastructure.adapters.outbound.persistence;
 
-import com.gila.notification.application.port.outbound.CategoryPersistencePort;
 import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.domain.ports.CategoryRepository;
 import org.junit.jupiter.api.Assertions;

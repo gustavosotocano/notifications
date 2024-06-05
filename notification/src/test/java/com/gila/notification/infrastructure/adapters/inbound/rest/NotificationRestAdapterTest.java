@@ -2,22 +2,17 @@ package com.gila.notification.infrastructure.adapters.inbound.rest;
 
 import com.gila.notification.application.port.inbound.CreateNotificationUseCase;
 import com.gila.notification.domain.implementation.testobjctmapper.LogTestObjectMother;
-import com.gila.notification.domain.models.Log;
 import com.gila.notification.domain.models.Notification;
 import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
-import com.gila.notification.infrastructure.adapters.inbound.rest.request.NotificationRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @SpringBootTest
 @AutoConfigureMockMvc

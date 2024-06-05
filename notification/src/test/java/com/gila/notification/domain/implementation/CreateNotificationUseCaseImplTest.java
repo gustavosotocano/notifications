@@ -2,7 +2,6 @@ package com.gila.notification.domain.implementation;
 
 import com.gila.notification.application.port.inbound.GetCategoryUseCase;
 import com.gila.notification.application.port.outbound.LogsPersistencePort;
-import com.gila.notification.domain.exception.CategoryNotFoundException;
 import com.gila.notification.domain.implementation.testobjctmapper.MockUsers;
 import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.domain.models.Notification;
@@ -18,7 +17,6 @@ import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 public class CreateNotificationUseCaseImplTest {

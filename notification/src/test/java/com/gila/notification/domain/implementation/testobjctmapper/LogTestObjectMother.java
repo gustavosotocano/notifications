@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class LogTestObjectMother {
     public static List<Log> aLog() {
-        List <Log> logs = new ArrayList<Log>();
+        List <Log> logs = new ArrayList<>();
        Log log= new Log ("message","Sports",1,"john doe",
                  "jdoe@gmail.com","4569876543","Sms",new Date());
         logs.add(log);

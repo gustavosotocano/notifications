@@ -1,7 +1,6 @@
 package com.gila.notification.domain.implementation;
 
 import com.gila.notification.application.port.inbound.GetLogsUseCase;
-import com.gila.notification.domain.exception.CategoryNotFoundException;
 import com.gila.notification.domain.exception.HeaderNotFoundException;
 import com.gila.notification.domain.implementation.testobjctmapper.LogTestObjectMother;
 import com.gila.notification.domain.models.Log;

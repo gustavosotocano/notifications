@@ -1,10 +1,10 @@
 package com.gila.notification.infrastructure.adapters.data;
 
 
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
-import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.ChannelEntity;
 import com.gila.notification.domain.models.User;
 import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.CategoryEntity;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.ChannelEntity;
+import com.gila.notification.infrastructure.adapters.outbound.persistence.entity.NotificationEntity;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,15 +1,15 @@
 package com.gila.notification.domain.implementation;
 
-import com.gila.notification.domain.exception.CategoryNotFoundException;
-import com.gila.notification.domain.implementation.GetCategoryUseCaseImpl;
-import com.gila.notification.domain.models.Category;
-import com.gila.notification.domain.models.CategoryNotifications;
 import com.gila.notification.application.port.outbound.CategoryPersistencePort;
+import com.gila.notification.domain.exception.CategoryNotFoundException;
+import com.gila.notification.domain.models.CategoryNotifications;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class GetCategoryUseCaseImplTest {
 

@@ -2,13 +2,12 @@ package com.gila.notification.domain.services;
 
 import com.gila.notification.application.port.outbound.LogsPersistencePort;
 import com.gila.notification.domain.models.Log;
-import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 import com.gila.notification.domain.models.NotificationChannel;
+import com.gila.notification.infrastructure.adapters.inbound.rest.request.UserDto;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.concurrent.CompletableFuture;
 
 @Service
 
