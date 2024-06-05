@@ -16,7 +16,7 @@ testability and adherence to SOLID principles.
   - SpringBoot 3.2.6
   - java 21
 - Frontend
-  - Angular 17
+  - Angular 17.3.6
 
 ## to add more notification channels.
 
