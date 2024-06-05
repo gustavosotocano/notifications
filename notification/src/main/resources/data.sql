@@ -1,3 +1,0 @@
---INSERT INTO USERS (id, name, email, phone, subscribed, channels) VALUES
---('1', 'Alice', 'alice@example.com', '1234567890', '["Sports", "Movies"]', '["Email", "Sms"]'),
---('2', 'Bob', 'bob@example.com', '0987654321', '["Finance"]', '["Push"]');
