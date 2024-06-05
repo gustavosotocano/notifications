@@ -17,6 +17,7 @@ testability and adherence to SOLID principles.
   - java 21
 - Frontend
   - Angular 17.3.6
+- Postgresql
 
 ## to add more notification channels.
 
