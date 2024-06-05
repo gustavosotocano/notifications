@@ -4,7 +4,6 @@ import com.gila.notification.application.port.inbound.CreateNotificationUseCase;
 import com.gila.notification.application.port.inbound.GetNotificationUseCase;
 import com.gila.notification.domain.implementation.testobjctmapper.LogTestObjectMother;
 import com.gila.notification.domain.models.Notification;
-import com.gila.notification.infrastructure.adapters.inbound.rest.mapper.NotificationRestMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
